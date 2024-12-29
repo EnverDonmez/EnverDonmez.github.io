@@ -1,0 +1,693 @@
+@import url('https://fonts.googleapis.com/css2?family=Aref+Ruqaa+Ink:wght@400;700&family=MedievalSharp&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ana renkler ve değişkenler */
+:root {
+    --primary-black: #0A0A0A;
+    --secondary-black: #1A1A1A;
+    --accent-color: #FF4545;  /* Kırmızımsı vurgu rengi */
+    --text-white: #FFFFFF;
+    --text-gray: #AAAAAA;
+    --card-bg: #202020;
+}
+
+/* Genel stiller */
+body {
+    background-color: var(--primary-black);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Smooth scroll için */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--primary-black);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255, 69, 69, 0.1);
+}
+
+.logo {
+    height: 32px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-link {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-shadow: 0 0 10px rgba(255, 69, 69, 0.8),
+                 0 0 20px rgba(255, 69, 69, 0.6),
+                 0 0 30px rgba(255, 69, 69, 0.4);
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 15px rgba(255, 69, 69, 1),
+                 0 0 25px rgba(255, 69, 69, 0.8),
+                 0 0 35px rgba(255, 69, 69, 0.6);
+    background-color: rgba(255, 69, 69, 0.05);
+}
+
+.sign-up {
+    background-color: var(--accent-color);
+    color: var(--text-white);
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    min-height: calc(100vh - 120px);
+    background-color: var(--secondary-black);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(255, 69, 69, 0.2),
+                0 0 60px rgba(255, 69, 69, 0.1),
+                0 0 90px rgba(255, 69, 69, 0.05);
+}
+
+/* İlk section hariç diğerlerine margin ekleyelim */
+.hero:not(:first-child) {
+    margin-top: 2rem;
+}
+
+/* Animasyonlu arka plan elementleri */
+.hero::before,
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 69, 69, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.hero::before {
+    top: -50px;
+    left: -50px;
+    animation: floatBubble1 15s ease-in-out infinite;
+}
+
+.hero::after {
+    bottom: -50px;
+    right: -50px;
+    animation: floatBubble2 18s ease-in-out infinite;
+}
+
+/* Yeni animasyonlu elementler */
+.floating-light {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 69, 69, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.light-1 { animation: floatBubble1 20s ease-in-out infinite; }
+.light-2 { animation: floatBubble2 25s ease-in-out infinite; }
+.light-3 { animation: floatBubble3 22s ease-in-out infinite; }
+.light-4 { animation: floatBubble4 19s ease-in-out infinite; }
+.light-5 { animation: floatBubble5 24s ease-in-out infinite; }
+.light-6 { animation: floatBubble6 21s ease-in-out infinite; }
+.light-7 { animation: floatBubble7 23s ease-in-out infinite; }
+.light-8 { animation: floatBubble8 26s ease-in-out infinite; }
+
+@keyframes floatBubble1 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(100px, 100px); }
+}
+
+@keyframes floatBubble2 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-100px, -100px); }
+}
+
+@keyframes floatBubble3 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(150px, -50px); }
+    66% { transform: translate(-50px, 100px); }
+}
+
+@keyframes floatBubble4 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(-150px, 50px); }
+    66% { transform: translate(50px, -100px); }
+}
+
+/* Animasyonlu arka plan elementleri için ek animasyonlar */
+@keyframes floatBubble5 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(120px, -80px); }
+}
+
+@keyframes floatBubble6 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-90px, 120px); }
+}
+
+@keyframes floatBubble7 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(100px, 100px); }
+    66% { transform: translate(-100px, -50px); }
+}
+
+@keyframes floatBubble8 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(-120px, -80px); }
+    66% { transform: translate(80px, 120px); }
+}
+
+/* Yeni ışık efektleri için stil */
+.light-3 { animation: floatBubble5 22s ease-in-out infinite; }
+.light-4 { animation: floatBubble6 19s ease-in-out infinite; }
+.light-5 { animation: floatBubble7 24s ease-in-out infinite; }
+.light-6 { animation: floatBubble8 21s ease-in-out infinite; }
+.light-7 { animation: floatBubble9 23s ease-in-out infinite; }
+.light-8 { animation: floatBubble10 26s ease-in-out infinite; }
+
+.hero-content {
+    max-width: 600px;
+    position: relative;
+    z-index: 1;
+    margin-left: 10%;
+    margin-top: 2rem; /* Başlık ile içerik arasında boşluk */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(to right, var(--text-white), var(--text-gray));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: var(--text-white);
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 0 25px rgba(255, 69, 69, 0.4);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+}
+
+/* Floating cards */
+.floating-cards {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Features section */
+.features {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature-card {
+    background-color: var(--secondary-black);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: left;
+}
+
+/* Section başlığı için güncellenen stil */
+.section-title {
+    font-size: 4rem;
+    font-weight: 500;
+    color: var(--text-white);
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 69, 69, 0.5),
+                 0 0 20px rgba(255, 69, 69, 0.3),
+                 0 0 30px rgba(255, 69, 69, 0.2);
+}
+
+/* Ana başlık stili */
+.main-title {
+    font-size: 12rem;
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.2;
+    color: var(--text-white);
+    text-shadow: 0 0 10px rgba(255, 69, 69, 0.5),
+                 0 0 20px rgba(255, 69, 69, 0.3),
+                 0 0 30px rgba(255, 69, 69, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.2em; /* Line-height kadar minimum yükseklik */
+}
+
+/* Animasyonlu overlay */
+.main-title::before {
+    content: 'Enver DÖNMEZ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: var(--accent-color);
+    animation: moveRedText 3s infinite;
+    clip-path: inset(0 66% 0 0);
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes moveRedText {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    50% {
+        clip-path: inset(0 0 0 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 100%);
+    }
+}
+
+/* Yeni "Ben" yazısı için stil */
+.ben-text {
+    font-size: 1.2rem; /* main-title'ın 10'da 1'i */
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-white);
+    text-shadow: 0 0 10px rgba(255, 69, 69, 0.5),
+                 0 0 20px rgba(255, 69, 69, 0.3),
+                 0 0 30px rgba(255, 69, 69, 0.2);
+}
+
+/* Yeni alt yazı için stil */
+.subtitle {
+    font-size: 1.8rem; /* 1.2rem'den 1.8rem'e ıkarıldı */
+    font-weight: 500;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-white);
+    text-shadow: 0 0 10px rgba(255, 69, 69, 0.5),
+                 0 0 20px rgba(255, 69, 69, 0.3),
+                 0 0 30px rgba(255, 69, 69, 0.2);
+}
+
+/* İçerik elementlerinin z-index'ini artır */
+.ben-text,
+.main-title,
+.subtitle {
+    z-index: 2;
+}
+
+/* Ana içerik container'ı */
+.content {
+    padding-top: 60px; /* Header yüksekliği kadar padding */
+}
+
+/* Section'ları düzenleyelim */
+.section {
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+#home.section {
+    min-height: 50vh;
+    padding: 1rem;
+}
+
+/* Hakkımda bölümü için özel stil */
+#about .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 25vh; /* Ekran yüksekliğinin 25%'i kadar yukarıdan boşluk */
+    align-items: center; /* Yatayda ortalama */
+}
+
+#about .section-title {
+    position: relative; /* absolute yerine relative */
+    margin: 0;
+    padding: 0;
+}
+
+/* Hakkımda bölümü için metin stili */
+.about-text {
+    color: var(--text-white);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px; /* Maksimum genişlik */
+    text-align: center;
+    margin: 3rem auto 0; /* Üstten boşluk ve yatayda ortalama */
+    padding: 0 2rem; /* Yanlarda boşluk */
+}
+
+/* Diğer section'lar için mevcut yükseklik korunacak */
+.section:not(#home) {
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Ana sayfa hero bölümü için güncelleme */
+#home .hero {
+    min-height: calc(50vh - 60px);
+    width: 100%;
+    position: relative;
+}
+
+/* Ben text pozisyon güncelleme */
+#home .ben-text {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Ana başlık pozisyon güncelleme */
+#home .main-title {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Alt başlık pozisyon güncelleme */
+#home .subtitle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Diğer section'lar için mevcut yükseklik korunacak */
+.section:not(#home) {
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+/* Sosyal medya linkleri container'ı */
+.social-links {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2rem;
+}
+
+/* Her bir sosyal medya ikonu için stil */
+.social-link {
+    color: var(--text-white);
+    font-size: 2rem;
+    transition: all 0.3s ease;
+    position: relative; /* Işık efekti için */
+    text-shadow: 0 0 10px rgba(255, 69, 69, 0.5),
+                 0 0 20px rgba(255, 69, 69, 0.3),
+                 0 0 30px rgba(255, 69, 69, 0.2);
+}
+
+/* Hover efekti */
+.social-link:hover {
+    color: var(--accent-color);
+    transform: translateY(-3px);
+    text-shadow: 0 0 15px rgba(255, 69, 69, 0.7),
+                 0 0 25px rgba(255, 69, 69, 0.5),
+                 0 0 35px rgba(255, 69, 69, 0.3);
+}
+
+/* Yetenekler bölümü stilleri */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.skill-icon {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.1);
+}
+
+.skill-name {
+    color: var(--text-white);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--accent-color);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(255, 69, 69, 0.5),
+                0 0 20px rgba(255, 69, 69, 0.3);
+    animation: progressAnimation 1s ease-out;
+}
+
+@keyframes progressAnimation {
+    from {
+        width: 0;
+    }
+}
+
+/* Yetenekler bölümü için güncelleme */
+#skills .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 25vh; /* Üst ile ortanın arasına konumlandırma */
+}
+
+#skills .section-title {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Diğer skill stilleri aynı kalacak */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 4rem;
+    flex-wrap: wrap;
+}
+
+/* Progress text stili */
+.progress-text {
+    color: var(--text-white);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 10px rgba(255, 69, 69, 0.8),
+                 0 0 20px rgba(255, 69, 69, 0.6),
+                 0 0 30px rgba(255, 69, 69, 0.4);
+}
+
+/* İletişim bölümü için güncelleme */
+#contact .hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 25vh; /* Üst ile ortanın arasına konumlandırma */
+}
+
+#contact .section-title {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* İletişim bölümü stilleri */
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    margin-top: 4rem;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2rem;
+    place-items: center; /* Merkeze hizalama */
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: rgba(255, 69, 69, 0.05);
+    border-radius: 16px;
+    width: 500px;
+    transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 69, 69, 0.1);
+}
+
+.contact-icon {
+    font-size: 3.5rem; /* İkon boyutunu büyüttük */
+    color: var(--text-white);
+    text-shadow: 0 0 15px rgba(255, 69, 69, 0.8),
+                 0 0 25px rgba(255, 69, 69, 0.6),
+                 0 0 35px rgba(255, 69, 69, 0.4);
+}
+
+.contact-text {
+    color: var(--text-white);
+    font-size: 1.5rem;
+    text-align: center;
+    text-shadow: 0 0 15px rgba(255, 69, 69, 0.8),
+                 0 0 25px rgba(255, 69, 69, 0.6),
+                 0 0 35px rgba(255, 69, 69, 0.4);
+}
+
+/* Dil değiştirme butonu stilleri */
+.lang-toggle {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 69, 69, 0.1);
+    border: 1px solid rgba(255, 69, 69, 0.3);
+    color: var(--text-white);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.lang-toggle:hover {
+    background-color: rgba(255, 69, 69, 0.2);
+    border-color: rgba(255, 69, 69, 0.5);
+}
